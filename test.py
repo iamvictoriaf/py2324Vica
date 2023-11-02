@@ -1,9 +1,12 @@
 a = range(1,100)
-b = ['kirill','ivan','pavel,petr']
+users = ['kirill','ivan','pavel','petr']
 
 print(type(a))
-print(type(b))
+print(type(users))
 
 for element in a:
     print(element*15)
+
+for user in users:
+    print(f'Уважаемый {user}, добро пожаловать!')
 
