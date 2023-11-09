@@ -1,7 +1,7 @@
 import pymysql
 
+f=open("users.txt", "r")
 connection = pymysql.connect(host="nadejnei.net", user="student", password="1q2w#E$R", database="test", port=33306)
-
 cursor = connection.cursor()
 
 for line in f:
@@ -11,8 +11,9 @@ for line in f:
     surname = split_line[1]
     sex = split_line[2]
     phone = split_line[3]
-    cursor.execute(f'insert into telsprav values("{name}", "{surname}", "{sex}", "{phone}")')
+    print(f'insert into telsprav values("{name}", "{surname}", "{sex}", "{phone}")')
 f.close()
+
 connection.commit()
 
 
