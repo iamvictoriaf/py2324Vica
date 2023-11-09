@@ -11,8 +11,8 @@ for line in f:
     surname = split_line[1]
     sex = split_line[2]
     phone = split_line[3]
-    cursor.execute("f'insert into telsprav values("{vica}", "{frank}", "{f}", "{89116543456}")')
-
+    cursor.execute(f'insert into telsprav values("{name}", "{surname}", "{sex}", "{phone}")')
+f.close()
 connection.commit()
 
 
