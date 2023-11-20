@@ -17,6 +17,6 @@ for element in data:
 print(telsprav)
 
 while True:
-    username = input("Введите имя абонента: ")
+    username = input("Введите имя абонента: ").capitalize()
     phone = telsprav.get(username, "не найден")
     print(f'Телефон абонента {username} - {phone}')
