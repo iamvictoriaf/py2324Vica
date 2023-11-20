@@ -3,3 +3,4 @@ julia:selezneva:f:89773215678
 vladimir:poroshrov:m:89345672134
 igor:vladimirovich:m:89324564376
 svetlana:igorevna:f:9874563245
+vera:neonova:f:89623773123

@@ -6,14 +6,15 @@ d2 = {
     'vera':'89623773123'
 }
 
-try:
+while True:
     name = input('Введите имя: ')
     print(f'Телефон абонента {name} - {d1[name]}')
+
 except KeyError:
     print(f'Телефон абонента {name} - не найден')
 #d1.update(d2)
 #print(d1)
 
-#'print(d1.items())
+#print(d1.items())
 #print(d1.keys())
-#print(d1.values())'
+#print(d1.values())
