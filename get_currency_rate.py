@@ -9,18 +9,28 @@ def get_data_from_config():
     config = configparser.ConfigParser()
     config.read('get_currency_rate.conf')
     db_host = config['database']['db_host']
-    logging.debug(f"{datetime.datetime.now()} - Получил db_user - {db_user}")
+    logging.debug(f"{datetime.datetime.now()} - Получил db_host - {db_host}")
     db_user = config['database']['db_user']
+    logging.debug(f"{datetime.datetime.now()} - Получил db_user - {db_user}")
     db_password = config['database']['db_password']
+    logging.debug(f"{datetime.datetime.now()} - Получил db_password - {db_password}")
     db_name = config['database']['db_name']
+    logging.debug(f"{datetime.datetime.now()} - Получил db_name - {db_name}")
     db_port = int(config['database']['db_port'])
-    cb_site  = config['cb_site']['cb_site']
+    logging.debug(f"{datetime.datetime.now()} - Получил db_port - {db_port}")
+    cb_site = config['cb_site']['cb_site']
+    logging.debug(f"{datetime.datetime.now()} - Получил cd_site - {cb_site}")
     return db_host, db_user, db_password, db_name, db_port, cb_site
 def get_data_from_cb(site):
     result = requests.get(site)
+    logging.debug(f"{datetime.datetime.now()} - Получил ответ из cb(site)- {cb_site}")
+
     valites = result.json()
+    logging.debug(f"{datetime.datetime.now()} - Получил информацию о валютах - {valites}")
+
     valutes_raw_dict = valites["Valute"]
     clean_valute_dict = {}
+    logging.debug(f"{datetime.datetime.now()} - Удаляю старые данные из библиотеки - {clean_valute_dict}")
     for val in valutes_raw_dict:
         real_rate = valutes_raw_dict[val]["Value"] / valutes_raw_dict[val]["Nominal"]
         #print(real_rate)
